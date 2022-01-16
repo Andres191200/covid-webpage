@@ -4,8 +4,8 @@ const Header = () =>{
     return(
         <div className="header-div">
             <ul>
-                <li><a>Home</a></li>
-                <li><a>About us</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About us</a></li>
             </ul>
         </div>
     )
