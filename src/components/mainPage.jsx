@@ -6,8 +6,8 @@ const mainPage = () =>{
     return(
         <div className="main-div">
             <div className="cards-container">
-                <Card cardNumber={'1'}/>
-                <Card cardNumber={'2'}/>
+                <Card cardNumber={'1'} percentage={20}/>
+                <Card cardNumber={'2'} percentage={69}/>
                 <div className="card-main-div card-3">
                     <div className="card-3-info">
                         <h1>Total cases: 0</h1>

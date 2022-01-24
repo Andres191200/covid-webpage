@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700,400);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,7 +54,7 @@ table {
 	margin:auto;
     height:80%;
     width: 80%;
-    background:#FFF;
+	background:#FFF;
 }
 
 .card-3{
@@ -95,4 +97,48 @@ table {
 
 .grid-div > div > p{
 	color:#FFF;
+}
+
+.card-1, .card-2{
+	display:flex;
+	align-items: center;
+}
+
+
+
+
+
+.progressdiv{
+    color:#374ab5;
+}
+
+.progress {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  transform: rotate(-90deg) rotateX(180deg);
+}
+
+.progress circle {
+	stroke-dashoffset: 0;
+  	transition: stroke-dashoffset 1s ease;
+  	stroke: #374ab5;
+  	stroke-width: 15px;
+}
+
+.progress .bar {
+	stroke: #DDD;
+}
+
+.progressdiv {
+  position: relative;
+}
+
+.progressdiv:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 35px;
+  transform: translate(-50%, -50%);
+  content: attr(data-percent) " %";
 }
