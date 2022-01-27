@@ -13,8 +13,19 @@ const calculateRecoveredCases = (totalCases, totalDeaths) =>{
     return totalCases - totalDeaths;
 }
 
+const startApi = async (setTotalCases,setTotalDeaths) =>{
+    let responseJSON = await loadApi('https://api.covid19tracking.narrativa.com/api/2020-05-05/country/argentina');
+    setTotalCases(responseJSON.total.today_confirmed);
+    setTotalDeaths(responseJSON.total.today_deaths)
+}
+
+const loadApi = async (url) =>{
+    let response = await fetch(url);
+    return response.json();
+}
 
 const mainPage = () => {
+    const [data, setData] = UseState({});
     const [totalCases, setTotalCases] = UseState();
     const [totalDeaths, setTotalDeaths] = UseState(1277127);
     const [vaccinatedCases, setVaccinatedCases] = UseState(8255121);
@@ -22,9 +33,8 @@ const mainPage = () => {
     const [recoveredCases, setRecoveredCases] = UseState(7255281);
 
     UseEffect(() =>{
-        setTotalCases(calculateTotalCases(vaccinatedCases,nonVaccinatedCases));     
-        
-    },[vaccinatedCases,nonVaccinatedCases])
+        startApi(setTotalCases, setTotalDeaths); 
+    },[totalCases])
 
     // setRecoveredCases(calculateRecoveredCases(totalCases, totalDeaths));    //THIS GIVES ERROR
 
