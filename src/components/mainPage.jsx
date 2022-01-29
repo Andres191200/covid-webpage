@@ -27,7 +27,7 @@ const loadApi = async (url) =>{
 const mainPage = () => {
     const [data, setData] = UseState({});
     const [totalCases, setTotalCases] = UseState();
-    const [totalDeaths, setTotalDeaths] = UseState(1277127);
+    const [totalDeaths, setTotalDeaths] = UseState();
     const [vaccinatedCases, setVaccinatedCases] = UseState(8255121);
     const [nonVaccinatedCases, setNonVaccinatedCases] = UseState(17288192);
     const [recoveredCases, setRecoveredCases] = UseState(7255281);
@@ -43,7 +43,7 @@ const mainPage = () => {
             <div className="cards-container">
                 <Card cardNumber={'1'} percentage={64} title={'World vaccinated people'} />
                 <Card cardNumber={'2'} percentage={86} title={'Argentina vaccinated people'} />
-                <Card2 cardNumber={'4'} title={'Deaths'} totalDeaths={totalDeaths}/>
+                <Card2 cardNumber={'4'} title={'Deaths'} setTotalDeaths={setTotalDeaths}/>
                 <div className="card-main-div card-3">
                     <div className="card-3-info">
                         <h1>Total cases: {totalCases}</h1>
